@@ -12,4 +12,4 @@ Program to calculate change.
 
 #### How to Run This Program
 
-####Lessons Learned
+#### Lessons Learned

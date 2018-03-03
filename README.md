@@ -5,7 +5,7 @@
 Program to calculate change.
 
 #### Technologies used:
-*Java Expressions
+* Java Expressions
 
 
 #### Project Description

@@ -30,12 +30,14 @@ public class MakeChangeApp {
 			//set if statement that informs the customer if they didn't pay enough
 			if (amountPayed < itemPrice) {
 				System.out.println("Sorry, that is not enough money.");
+				System.out.println("");
 				continue;
 			}
 			//set if statement for exact change
 			if (amountPayed == itemPrice) {
 				System.out.println("Oh wow, that's exact change! Thank you, have a nice day!");
-				break;
+				System.out.println("");
+				continue;
 			}
 
 			//send doubles to decideChange method
@@ -47,8 +49,8 @@ public class MakeChangeApp {
 
 	//this method decides how much change to give the customer as well as print out the results
 	public static void decideChange(double price, double payed) {
-		int twentyDollars = 2000, tenDollars = 1000, fiveDollars = 500, oneDollar = 100, quarter = 25, dime = 10,
-				nickel = 5, penny = 1;
+		//assign each currency a vale in array
+		int[] currency = {2000, 1000, 500, 100, 25, 10, 5, 1};
 
 		//multiply entered numbers by 100 and set to int for easier calculations
 		int itemPrice = (int) (price * 100);
@@ -59,23 +61,23 @@ public class MakeChangeApp {
 		int change = (int) (amountPayed - itemPrice);
 		
 		//calculate the amount of change needed for each type of currency
-		//set change to new amount of leftover via % 
-		int twentyChange = change / twentyDollars;
-		change = change % twentyDollars;
-		int tenChange = change / tenDollars;
-		change = change % tenDollars;
-		int fiveChange = change / fiveDollars;
-		change = change % fiveDollars;
-		int oneChange = change / oneDollar;
-		change = change % oneDollar;
-		int quarterChange = change / quarter;
-		change = change % quarter;
-		int dimeChange = change / dime;
-		change = change % dime;
-		int nickelChange = change / nickel;
-		change = change % nickel;
-		int pennyChange = change / penny;
-		change = change % penny;
+		//set change to new amount of leftover via %
+		int twentyChange = change / currency[0];
+		change = change % currency[0];
+		int tenChange = change / currency[1];
+		change = change % currency[1];
+		int fiveChange = change / currency[2];
+		change = change % currency[2];
+		int oneChange = change / currency[3];
+		change = change % currency[3];
+		int quarterChange = change / currency[4];
+		change = change % currency[4];
+		int dimeChange = change / currency[5];
+		change = change % currency[5];
+		int nickelChange = change / currency[6];
+		change = change % currency[6];
+		int pennyChange = change / currency[7];
+		change = change % currency[7];
 		
 		//print out the change the customer receives & final message
 		System.out.print("You get " + twentyChange + " $20 bills, ");
